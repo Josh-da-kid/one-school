@@ -13,7 +13,7 @@
 		<img src={$image} alt="" class="w-full h-full object-cover" />
 		<div class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/10"></div>
 	</div>
-	<div class="relative mx-auto mt-4 flex w-full max-w-7xl flex-col gap-4 p-4 px-8">
+	<div class="relative mx-auto flex w-full max-w-7xl flex-col gap-4 p-4 px-8">
 		<h4 class="text-white text-start text-xl md:text-2xl">
 			{$subtitle}
 		</h4>
