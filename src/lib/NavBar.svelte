@@ -85,7 +85,8 @@
 			>
 
 			<a
-				href="/manage"
+				href="https://manage.yrka.ng/_/#/login"
+				target="_blank"
 				class="hover:text-green-500 text-orange-500"
 				class:border-b-2={currentPath === '/manage'}
 				class:text-green-800={currentPath === '/manage'}
@@ -147,7 +148,8 @@
 				>
 
 				<a
-					href="/manage"
+					href="https://manage.yrka.ng/_/#/login"
+					target="_blank"
 					class="text-orange-500 hover:text-green-500"
 					class:hover:text-green-500={currentPath !== '/manage'}
 					class:text-green-500={currentPath === '/manage'}

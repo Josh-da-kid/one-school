@@ -34,7 +34,7 @@
 						>
 						<h4 class="font-semibold">Call us</h4>
 					</div>
-					<ul class="sm:text-lg flex flex-col gap-2 text-gray-500">
+					<ul class="flex flex-col gap-2 text-gray-500">
 						<li>+234-801-234-5678</li>
 						<li>+234-802-345-6789</li>
 					</ul>
@@ -58,8 +58,7 @@
 						<h4 class="font-semibold">Email us</h4>
 					</div>
 					<ul class="flex flex-col gap-2 text-gray-500">
-						<li>info@unicalradio.edu.ng</li>
-						<li>contact@unicalradio.edu.ng</li>
+						<li>contact@yrka.ng</li>
 					</ul>
 				</div>
 			</div>

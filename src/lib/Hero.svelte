@@ -6,7 +6,7 @@
 </script>
 
 <section
-	class="w-screen py-12 text-center transition-all duration-500 md:flex relative"
+	class="w-screen py-12 text-center items-center transition-all duration-500 md:flex relative"
 	style:height
 >
 	<div class="absolute inset-0 -z-10">

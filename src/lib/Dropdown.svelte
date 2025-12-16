@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { get } from 'svelte/store';
+	import { page } from '$app/stores';
 
 	export let items: { id: string; text: string; href?: string }[] = [];
 	export let className: string = '';
@@ -27,7 +28,7 @@
 		class="flex items-center justify-between rounded text-orange-500 px-3 py-2 font-bold {className}"
 		on:click={toggle}
 	>
-		<span>{items.find((i) => i.id === selectedId)?.text}</span>
+		<span>Our Services</span>
 		<i class="fa-solid fa-chevron-down ml-2 text-sm"></i>
 	</button>
 
@@ -39,6 +40,7 @@
 					<a
 						href={item.href}
 						class="dropdown-item block cursor-pointer py-1 hover:bg-gray-100"
+						class:bg-gray-200={$page.url.pathname === item.href}
 						on:click={() => select(item.id)}
 					>
 						<div class="ml-3 p-2 px-3 text-black">
