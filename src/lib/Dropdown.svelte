@@ -35,7 +35,7 @@
 	<!-- Dropdown menu -->
 	{#if isOpen}
 		<div class="animate-fadeIn absolute left-0 z-50 mt-2 w-[180px] border bg-white shadow-lg">
-			{#each items as item (item.id)}
+			{#each items.slice(1) as item (item.id)}
 				{#if item.href}
 					<a
 						href={item.href}
