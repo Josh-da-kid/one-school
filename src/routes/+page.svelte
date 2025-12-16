@@ -173,7 +173,7 @@
 				class="absolute inset-0 w-full h-full object-cover z-0"
 			></video>
 			<div
-				class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/90 to-black/70 z-10"
+				class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/90 to-black/40 z-10"
 			></div>
 		{/if}
 		<div class="relative mx-auto flex w-full max-w-7xl flex-col gap-12 p-4 px-8 z-20">
