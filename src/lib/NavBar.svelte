@@ -4,6 +4,9 @@
 
 	let { mobileMenuOpen = $bindable(false), menuIcon = $bindable('fa-bars') } = $props();
 
+	let companyMenuOpen = $state(false);
+	let servicesMenuOpen = $state(false);
+
 	// Get current path for active menu highlighting
 	let currentPath = $derived($page.url.pathname);
 
@@ -35,29 +38,16 @@
 				class:opacity-80={currentPath === '/'}>Home</a
 			>
 
-			<a
-				href="/about"
-				class="hover:text-green-500 text-orange-500"
-				class:border-b-2={currentPath === '/about'}
-				class:text-green-800={currentPath === '/about'}
-				class:opacity-80={currentPath === '/about'}>About Us</a
-			>
-
-			<a
-				href="/framework"
-				class="hover:text-green-500 text-orange-500"
-				class:border-b-2={currentPath === '/framework'}
-				class:text-green-800={currentPath === '/framework'}
-				class:opacity-80={currentPath === '/framework'}>Institutional Framework</a
-			>
-
-			<a
-				href="/philosophy"
-				class="hover:text-green-500 text-orange-500"
-				class:border-b-2={currentPath === '/philosophy'}
-				class:text-green-800={currentPath === '/philosophy'}
-				class:opacity-80={currentPath === '/philosophy'}>Corporate Philosophy</a
-			>
+			<Dropdown
+				dropdownId="nav-2"
+				selectedId="0"
+				items={[
+					{ id: '0', text: 'Our Company' }, // This will be unclickable
+					{ id: '1', text: 'About Us', href: '/about' },
+					{ id: '2', text: 'Institutional Framework', href: '/framework' },
+					{ id: '3', text: 'Corporate Philosophy', href: '/philosophy' }
+				]}
+			/>
 
 			<Dropdown
 				dropdownId="nav-1"
@@ -116,30 +106,49 @@
 					class:text-green-500={currentPath === '/'}
 					class:font-bold={currentPath === '/'}>Home</a
 				>
-				<a
-					href="/about"
-					class="text-orange-500 hover:text-green-500"
-					class:text-green-500={currentPath === '/about'}
-					class:font-bold={currentPath === '/about'}>About Us</a
-				>
-				<a
-					href="/framework"
-					class="text-orange-500 hover:text-green-500"
-					class:text-green-500={currentPath === '/framework'}
-					class:font-bold={currentPath === '/framework'}>Institutional Frameworks</a
-				>
-				<a
-					href="/philosophy"
-					class="text-orange-500 hover:text-green-500"
-					class:text-green-500={currentPath === '/philosophy'}
-					class:font-bold={currentPath === '/philosophy'}>Corporate Philosophy</a
-				>
-				<a
-					href="/services"
-					class="text-orange-500 hover:text-green-500"
-					class:text-green-500={currentPath === '/services'}
-					class:font-bold={currentPath === '/services'}>Our Services</a
-				>
+				<div class="flex flex-col">
+					<button
+						on:click={() => (companyMenuOpen = !companyMenuOpen)}
+						class="flex justify-between items-center text-orange-500 font-semibold w-full"
+					>
+						<span>Our Company</span>
+						<i class="fa-solid {companyMenuOpen ? 'fa-chevron-up' : 'fa-chevron-down'} text-sm"></i>
+					</button>
+					{#if companyMenuOpen}
+						<div class="flex flex-col space-y-2 pl-4 pt-2">
+							<a href="/about" class="hover:text-green-500 text-black">About Us</a>
+							<a href="/framework" class="hover:text-green-500 text-black"
+								>Institutional Framework</a
+							>
+							<a href="/philosophy" class="hover:text-green-500 text-black">Corporate Philosophy</a>
+						</div>
+					{/if}
+				</div>
+
+				<div class="flex flex-col">
+					<button
+						on:click={() => (servicesMenuOpen = !servicesMenuOpen)}
+						class="flex justify-between items-center text-orange-500 font-semibold w-full"
+					>
+						<span>Our Services</span>
+						<i class="fa-solid {servicesMenuOpen ? 'fa-chevron-up' : 'fa-chevron-down'} text-sm"
+						></i>
+					</button>
+					{#if servicesMenuOpen}
+						<div class="flex flex-col space-y-2 pl-4 pt-2">
+							<a href="/academiq" class="hover:text-green-500 text-black">AcademIQ</a>
+							<a href="/cliniq" class="hover:text-green-500 text-black">ClinIQ</a>
+							<a href="/fundnet" class="hover:text-green-500 text-black">FUNDNet</a>
+							<a href="/idid" class="hover:text-green-500 text-black">IDID</a>
+							<a href="/logistiq" class="hover:text-green-500 text-black">LogistIQ</a>
+							<a href="/sydney-gateway" class="hover:text-green-500 text-black">Sydney Gateway</a>
+							<a href="/tri-iq" class="hover:text-green-500 text-black">TriIQ</a>
+							<a href="/youlink" class="hover:text-green-500 text-black">YOUlink</a>
+							<a href="/vmeetz-ms" class="hover:text-green-500 text-black">vMeetz MS</a>
+						</div>
+					{/if}
+				</div>
+
 				<a
 					href="/contact"
 					class="text-orange-500 hover:text-green-500"

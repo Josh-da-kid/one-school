@@ -28,7 +28,7 @@
 		class="flex items-center justify-between rounded text-orange-500 px-3 py-2 font-bold {className}"
 		on:click={toggle}
 	>
-		<span>Our Services</span>
+		<span>{items[0].text}</span>
 		<i class="fa-solid fa-chevron-down ml-2 text-sm"></i>
 	</button>
 

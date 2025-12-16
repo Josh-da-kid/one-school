@@ -9,11 +9,11 @@
 	class="w-screen py-12 text-center items-center transition-all duration-500 md:flex relative"
 	style:height
 >
-	<div class="absolute inset-0 -z-10">
+	<div class="absolute inset-0">
 		<img src={$image} alt="" class="w-full h-full object-cover" />
 		<div class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/10"></div>
 	</div>
-	<div class="relative mx-auto flex w-full max-w-7xl flex-col gap-4 p-4 px-8">
+	<div class="relative mx-auto mt-16 sm:mt-0 flex w-full max-w-7xl flex-col gap-4 p-4 px-8">
 		<h4 class="text-white text-start text-xl md:text-2xl">
 			{$subtitle}
 		</h4>
