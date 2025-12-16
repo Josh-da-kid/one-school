@@ -5,14 +5,14 @@
 	const slides = [
 		{
 			image:
-				'https://static.vecteezy.com/system/resources/previews/038/904/795/non_2x/ai-generated-selective-focus-on-professional-boom-arm-microphone-stand-used-for-recording-voice-in-online-podcast-in-home-studio-detail-of-sound-device-equipment-used-for-live-broadcast-on-internet-photo.jpg    '
+				'https://contents.yrka.app/api/files/pbc_3025951362/537o6egccvmffo7/function_fame_un5cyoctbm.jpeg'
 		},
 		{
 			image:
-				'https://static.vecteezy.com/system/resources/previews/044/650/386/non_2x/ai-generated-professional-studio-microphone-setup-for-quality-sound-recording-photo.jpg'
+				'https://contents.yrka.app/api/files/pbc_3025951362/lsti3dsg19qb211/brain_light_bulbs_ideas_new_ideas_with_innovative_technology_creativity_generative_ai_15083_1124_5ookvdtu7a.jpg'
 		},
 		{
-			image: '/04a07891ace45921948d4161629ff7a3.mp4'
+			image: '/background-video.mp4'
 		}
 	];
 
@@ -160,7 +160,7 @@
 	<section
 		class="min-h-screen w-screen items-center bg-cover bg-center bg-no-repeat py-12 text-center transition-all duration-500 md:flex relative"
 		style={!isVideo
-			? `background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6)), url('${slides[currentSlide].image}');`
+			? `background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)), url('${slides[currentSlide].image}');`
 			: ''}
 	>
 		{#if isVideo}
