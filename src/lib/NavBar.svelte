@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { solutions } from './data';
 	import Dropdown from './Dropdown.svelte';
 
 	let { mobileMenuOpen = $bindable(false), menuIcon = $bindable('fa-bars') } = $props();
@@ -32,6 +33,7 @@
 		<nav class="hidden justify-center mx-auto items-center space-x-8 font-semibold md:flex">
 			<a
 				href="/"
+				data-sveltekit-reload
 				class="hover:text-green-500 text-orange-500"
 				class:border-b-2={currentPath === '/'}
 				class:text-green-800={currentPath === '/'}
@@ -68,6 +70,7 @@
 
 			<a
 				href="/contact"
+				data-sveltekit-reload
 				class="hover:text-green-500 text-orange-500"
 				class:border-b-2={currentPath === '/contact'}
 				class:text-green-800={currentPath === '/contact'}
@@ -136,15 +139,9 @@
 					</button>
 					{#if servicesMenuOpen}
 						<div class="flex flex-col space-y-2 pl-4 pt-2">
-							<a href="/academiq" class="hover:text-green-500 text-black">AcademIQ</a>
-							<a href="/cliniq" class="hover:text-green-500 text-black">ClinIQ</a>
-							<a href="/fundnet" class="hover:text-green-500 text-black">FUNDNet</a>
-							<a href="/idid" class="hover:text-green-500 text-black">IDID</a>
-							<a href="/logistiq" class="hover:text-green-500 text-black">LogistIQ</a>
-							<a href="/sydney-gateway" class="hover:text-green-500 text-black">Sydney Gateway</a>
-							<a href="/tri-iq" class="hover:text-green-500 text-black">TriIQ</a>
-							<a href="/youlink" class="hover:text-green-500 text-black">YOUlink</a>
-							<a href="/vmeetz-ms" class="hover:text-green-500 text-black">vMeetz MS</a>
+							{#each solutions as solution}
+								<a href={solution.slug} class="hover:text-green-500 text-black">{solution.title}</a>
+							{/each}
 						</div>
 					{/if}
 				</div>
