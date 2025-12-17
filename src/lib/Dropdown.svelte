@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { get } from 'svelte/store';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	export let items: { id: string; text: string; href?: string }[] = [];
 	export let className: string = '';
@@ -12,8 +13,9 @@
 
 	$: isOpen = $openDropdown === dropdownId;
 
-	function toggle() {
+	function toggle(event: MouseEvent) {
 		openDropdown.set(isOpen ? null : dropdownId);
+		event.stopPropagation();
 	}
 
 	function select(id: string) {
@@ -22,7 +24,21 @@
 	}
 </script>
 
-<div class="relative">
+<svelte:window
+	on:click={() => {
+		if (isOpen) {
+			openDropdown.set(null);
+		}
+	}}
+/>
+
+<div
+	class="relative"
+	on:click={(e) => {
+		// Stop propagation to prevent window click from closing it
+		e.stopPropagation();
+	}}
+>
 	<!-- Trigger -->
 	<button
 		class="flex items-center justify-between rounded text-orange-500 px-3 py-2 font-bold {className}"
