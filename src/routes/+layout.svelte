@@ -68,7 +68,7 @@
 		href="https://oneschool.yrka.app/images/photo_2025-10-26_16-16-28-removebg-preview.png"
 	/>
 	<meta charset="utf-8" />
-	<title>1School - Transforming education with digital solutions</title>
+	<title>YOUreka</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#0b63d8" />
 
